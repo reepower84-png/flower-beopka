@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --surface: #f6f7fa; /* 연회색 패널 */
+  --foreground: #1b2540; /* 짙은 네이비 */
+  --muted: #5d6680;
+  --navy: #1b2540;
+  --navy-2: #26325a;
+  --rose: #d6457a; /* 로즈핑크 포인트 */
+  --rose-dark: #b83463;
+  --rose-soft: #fdeef3;
+  --line: #e5e8ef;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Apple SD Gothic Neo", "Malgun Gothic", ui-sans-serif, system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.anim-sheet {
+  animation: sheet-in 0.2s ease-out;
+}
+.anim-fade {
+  animation: fade-in 0.18s ease-out;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-navy: var(--navy);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+}
